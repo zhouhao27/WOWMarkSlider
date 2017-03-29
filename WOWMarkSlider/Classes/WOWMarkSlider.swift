@@ -146,7 +146,7 @@ open class WOWMarkSlider: UISlider {
             setMaximumTrackImage(unselectedStripSide, for: .normal)
             if handlerImage != nil {
                 setThumbImage(handlerImage, for: .normal)
-            } else if handlerColor != nil {
+            } else {
                 setThumbImage(UIImage(), for: .normal)
                 thumbTintColor = handlerColor
             }
