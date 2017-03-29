@@ -1,0 +1,6 @@
+framework module Pods_WOWMarkSlider_Tests {
+  umbrella header "Pods-WOWMarkSlider_Tests-umbrella.h"
+
+  export *
+  module * { export * }
+}

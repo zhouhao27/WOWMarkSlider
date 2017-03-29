@@ -1,0 +1,22 @@
+{
+  "name": "WOWMarkSlider",
+  "version": "0.1.0",
+  "summary": "A short description of WOWMarkSlider.",
+  "description": "TODO: Add long description of the pod here.",
+  "homepage": "https://github.com/zhouhao27/WOWMarkSlider",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "zhouhao27": "zhou.hao.27@gmail.com"
+  },
+  "source": {
+    "git": "https://github.com/zhouhao27/WOWMarkSlider.git",
+    "tag": "0.1.0"
+  },
+  "platforms": {
+    "ios": "8.0"
+  },
+  "source_files": "WOWMarkSlider/Classes/**/*"
+}

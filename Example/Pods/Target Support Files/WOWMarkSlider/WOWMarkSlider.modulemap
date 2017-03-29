@@ -1,0 +1,6 @@
+framework module WOWMarkSlider {
+  umbrella header "WOWMarkSlider-umbrella.h"
+
+  export *
+  module * { export * }
+}

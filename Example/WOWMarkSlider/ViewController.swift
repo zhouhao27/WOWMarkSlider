@@ -7,12 +7,20 @@
 //
 
 import UIKit
+import WOWMarkSlider
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var slider: WOWMarkSlider!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        
+        slider.markColor = UIColor.red
+        slider.markWidth = 2.0
+        slider.markPositions = [30, 50, 80]
+        slider.lineCap = .square
+        slider.height = 8.0
     }
 
     override func didReceiveMemoryWarning() {
