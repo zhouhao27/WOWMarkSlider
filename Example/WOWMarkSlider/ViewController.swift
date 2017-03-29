@@ -16,11 +16,11 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        slider.markColor = UIColor.red
+//        slider.markColor = UIColor.red
         slider.markWidth = 2.0
         slider.markPositions = [30, 50, 80]
         slider.lineCap = .square
-        slider.height = 8.0
+        slider.height = 7.0
     }
 
     override func didReceiveMemoryWarning() {

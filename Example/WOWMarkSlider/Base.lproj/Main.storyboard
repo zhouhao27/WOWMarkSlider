@@ -26,10 +26,10 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="color" keyPath="markColor">
-                                        <color key="value" red="1" green="0.18409758809999999" blue="0.4709506631" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="value" red="0.01176470588" green="0.66274509800000003" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="color" keyPath="selectedBarColor">
-                                        <color key="value" red="0.01176470588" green="0.66274509800000003" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="value" red="0.98823529409999999" green="0.35686274509999999" blue="0.36470588240000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="color" keyPath="unselectedBarColor">
                                         <color key="value" red="0.89699613990000004" green="0.90339184419999996" blue="0.92257895700000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -37,6 +37,7 @@
                                     <userDefinedRuntimeAttribute type="color" keyPath="handlerColor">
                                         <color key="value" red="0.0" green="0.7843137255" blue="0.32549019610000002" alpha="1" colorSpace="calibratedRGB"/>
                                     </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="image" keyPath="handlerImage" value="Ring"/>
                                 </userDefinedRuntimeAttributes>
                             </slider>
                         </subviews>
@@ -51,4 +52,7 @@
             <point key="canvasLocation" x="31.884057971014496" y="39.945652173913047"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Ring" width="20" height="20"/>
+    </resources>
 </document>
