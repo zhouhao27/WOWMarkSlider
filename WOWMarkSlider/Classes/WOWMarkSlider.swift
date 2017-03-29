@@ -54,6 +54,7 @@ open class WOWMarkSlider: UISlider {
         }
     }
     
+    @IBInspectable
     open var height: CGFloat = 12.0 {
         didSet {
             setNeedsDisplay()
