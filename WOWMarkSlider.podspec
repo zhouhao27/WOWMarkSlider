@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'WOWMarkSlider'
-  s.version          = '0.1.3'
+  s.version          = '0.1.4'
   s.summary          = 'Customizable UISlider.'
 
 # This description is used to generate tags and improve search results.
@@ -18,7 +18,7 @@ Pod::Spec.new do |s|
 #   * Finally, don't worry about the indent, CocoaPods strips it!
 
   s.description      = <<-DESC
-This is a customizable UISlider.
+This is a customizable UISlider which will show a tooltip when drag the slider.
                        DESC
 
   s.homepage         = 'https://github.com/zhouhao27/WOWMarkSlider'

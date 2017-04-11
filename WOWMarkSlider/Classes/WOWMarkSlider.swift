@@ -61,6 +61,13 @@ open class WOWMarkSlider: UISlider {
         }
     }
     
+    private var toolTipView: WOWTooltipView!
+    
+    var thumbRect: CGRect {
+        let rect = trackRect(forBounds: bounds)
+        return thumbRect(forBounds: bounds, trackRect: rect, value: value)
+    }
+    
     // MARK: view life circle
     required public init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder);
@@ -74,7 +81,58 @@ open class WOWMarkSlider: UISlider {
     
     // MARK: local functions
     func setup() {
+        toolTipView = WOWTooltipView(frame: CGRect.zero)
+        toolTipView.backgroundColor = UIColor.clear
+        self.addSubview(toolTipView)
+    }
+    
+    // MARK: UIControl touch event tracking
+    open override func beginTracking(_ touch: UITouch, with event: UIEvent?) -> Bool {
         
+        // Fade in and update the popup view
+        let touchPoint = touch.location(in: self)
+        // Check if the knob is touched. Only in this case show the popup-view
+        if thumbRect.contains(touchPoint) {
+            positionAndUpdatePopupView()
+            fadePopupViewInAndOut(fadeIn: true)
+        }
+        return super.beginTracking(touch, with: event)
+    }
+    
+    open override func continueTracking(_ touch: UITouch, with event: UIEvent?) -> Bool {
+        // Update the popup view as slider knob is being moved
+        positionAndUpdatePopupView()
+        return super.continueTracking(touch, with: event)
+    }
+    
+    open override func cancelTracking(with event: UIEvent?) {
+        super.cancelTracking(with: event)
+    }
+    
+    open override func endTracking(_ touch: UITouch?, with event: UIEvent?) {
+        // Fade out the popoup view
+        fadePopupViewInAndOut(fadeIn: false)
+        super.endTracking(touch, with: event)
+    }
+    
+    private func positionAndUpdatePopupView() {
+        
+        let tRect = thumbRect
+        let popupRect = tRect.offsetBy(dx: 0, dy: -(tRect.size.height * 1.5))
+        toolTipView.frame = popupRect.insetBy(dx: -20, dy: -10)
+        toolTipView.value = value
+    }
+    
+    private func fadePopupViewInAndOut(fadeIn: Bool) {
+
+        UIView.beginAnimations(nil, context: nil)
+        UIView.setAnimationDuration(0.5)
+        if fadeIn {
+            toolTipView.alpha = 1.0
+        } else {
+            toolTipView.alpha = 0.0
+        }
+        UIView.commitAnimations()
     }
     
     // MARK: drawing
