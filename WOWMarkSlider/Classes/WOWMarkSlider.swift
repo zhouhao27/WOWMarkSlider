@@ -1,6 +1,6 @@
 import UIKit
 
-open protocol WOWMarkSliderDelegate: class {
+public protocol WOWMarkSliderDelegate: class {
     func markSlider(slider: WOWMarkSlider, dragged to: Float)
 }
 
