@@ -1,6 +1,8 @@
 import UIKit
 
 public protocol WOWMarkSliderDelegate: class {
+    func startDragging(slider: WOWMarkSlider)
+    func endDragging(slider: WOWMarkSlider)
     func markSlider(slider: WOWMarkSlider, dragged to: Float)
 }
 
@@ -95,6 +97,7 @@ open class WOWMarkSlider: UISlider {
     // MARK: UIControl touch event tracking
     open override func beginTracking(_ touch: UITouch, with event: UIEvent?) -> Bool {
         
+        delegate?.startDragging(slider: self)
         // Fade in and update the popup view
         let touchPoint = touch.location(in: self)
         // Check if the knob is touched. Only in this case show the popup-view
@@ -112,11 +115,13 @@ open class WOWMarkSlider: UISlider {
     }
     
     open override func cancelTracking(with event: UIEvent?) {
+        delegate?.endDragging(slider: self)
         super.cancelTracking(with: event)
     }
     
     open override func endTracking(_ touch: UITouch?, with event: UIEvent?) {
         // Fade out the popoup view
+        delegate?.endDragging(slider: self)
         delegate?.markSlider(slider: self, dragged: value)
         fadePopupViewInAndOut(fadeIn: false)
         super.endTracking(touch, with: event)
