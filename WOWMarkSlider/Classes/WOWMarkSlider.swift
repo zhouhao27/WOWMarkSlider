@@ -1,7 +1,13 @@
 import UIKit
 
+open protocol WOWMarkSliderDelegate: class {
+    func markSlider(slider: WOWMarkSlider, dragged to: Float)
+}
+
 @IBDesignable
 open class WOWMarkSlider: UISlider {
+    
+    open weak var delegate: WOWMarkSliderDelegate?
     
     open var markPositions: [Float]?
     
@@ -111,6 +117,7 @@ open class WOWMarkSlider: UISlider {
     
     open override func endTracking(_ touch: UITouch?, with event: UIEvent?) {
         // Fade out the popoup view
+        delegate?.markSlider(slider: self, dragged: value)
         fadePopupViewInAndOut(fadeIn: false)
         super.endTracking(touch, with: event)
     }
